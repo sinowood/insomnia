@@ -1,0 +1,49 @@
+﻿<Window x:Class="Insomnia.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Insomnia"
+    Topmost="True"
+    Height="200"
+    Width="300"
+    WindowStartupLocation="CenterScreen"
+    ResizeMode="CanMinimize"
+    Background="#ffdddddd">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Message -->
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextElement.FontSize="16"
+            TextElement.Foreground="Red"
+            TextElement.FontWeight="Bold">
+            <ContentControl Content="The computer can not"/>
+            <ContentControl Content="go to sleep while this"/>
+            <ContentControl Content="window is open."/>
+        </StackPanel>
+
+        <!-- Status bar -->
+        <StatusBar
+            Grid.Row="1"
+            BorderBrush="DarkGray"
+            BorderThickness="0 1 0 0">
+            <StatusBarItem HorizontalAlignment="Left">
+                <TextBlock
+                    VerticalAlignment="Center">
+                    <Hyperlink
+                        NavigateUri="http://blogs.msdn.com/delay/"
+                        RequestNavigate="Hyperlink_RequestNavigate">http://blogs.msdn.com/delay/</Hyperlink>
+                </TextBlock>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock
+                    Text="Version 2010-01-29"
+                    VerticalAlignment="Center"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
