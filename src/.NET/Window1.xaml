@@ -21,9 +21,21 @@
             TextElement.FontSize="16"
             TextElement.Foreground="Red"
             TextElement.FontWeight="Bold">
-            <ContentControl Content="The computer can not"/>
-            <ContentControl Content="go to sleep while this"/>
-            <ContentControl Content="window is open."/>
+            <ContentControl Content="The computer can not" HorizontalAlignment="Center"/>
+            <ContentControl Content="go to sleep" HorizontalAlignment="Center"/>
+            <ContentControl x:Name="s_info" Content="while this window is open" HorizontalAlignment="Center"/>
+            <Grid Height="30" Width="200" Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="13" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <ComboBox x:Name="i_hours" FontSize="13" Grid.Column="0" Margin="3,3,0,3" SelectionChanged="timer_SelectionChanged"/>
+                <Label Grid.Column="1" Margin="0" FontSize="10" VerticalContentAlignment="Center" Content=":"/>
+                <ComboBox x:Name="i_minutes" FontSize="13" Grid.Column="2" Margin="0,3,3,3" SelectionChanged="timer_SelectionChanged"/>
+                <Button x:Name="btn_set" Content="set timer" Grid.Column="3" FontSize="14" HorizontalAlignment="Stretch" Margin="3,0,0,0" VerticalAlignment="Center" Click="btn_set_Click" />
+            </Grid>
         </StackPanel>
 
         <!-- Status bar -->
@@ -35,13 +47,13 @@
                 <TextBlock
                     VerticalAlignment="Center">
                     <Hyperlink
-                        NavigateUri="http://blogs.msdn.com/delay/"
-                        RequestNavigate="Hyperlink_RequestNavigate">http://blogs.msdn.com/delay/</Hyperlink>
+                        NavigateUri="https://github.com/sinowood/insomnia"
+                        RequestNavigate="Hyperlink_RequestNavigate">Github</Hyperlink>
                 </TextBlock>
             </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right">
                 <TextBlock
-                    Text="Version 2010-01-29"
+                    Text="Version 2021-03-12"
                     VerticalAlignment="Center"/>
             </StatusBarItem>
         </StatusBar>

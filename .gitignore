@@ -1,0 +1,5 @@
+src/*/.vs
+src/*/Backup
+src/*/bin
+src/*/obj
+src/*/UpgradeLog.htm
